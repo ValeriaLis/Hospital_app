@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insurance_number: MyString
+  date_start: 2023-04-05
+  clinic: one
+  diagnosis: MyString
+  patient: one
+
+two:
+  insurance_number: MyString
+  date_start: 2023-04-05
+  clinic: two
+  diagnosis: MyString
+  patient: two
