@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<% if @specialty.present? %>
+  <%= render @specialty %>
+  <div>
+    <%= link_to "Edit", edit_specialty_path(@specialty) %>
+    <%= button_to "Delete", @specialty, method: :delete %>
+  </div>
+<% else %>
+  <p>This specialty does not exist.</p>
+<% end %>
+<%= link_to "Back", specialties_path %>

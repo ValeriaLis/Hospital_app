@@ -1,0 +1,28 @@
+<div id="<%= dom_id patient_card %>">
+
+  <p>
+    <strong>Number:</strong>
+    <%= patient_card.insurance_number %>
+  </p>
+
+  <p>
+    <strong>Date start:</strong>
+    <%= patient_card.date_start%>
+  </p>
+
+  <p>
+    <strong>Clinic:</strong>
+    <%= patient_card.clinic.name %>
+  </p>
+
+  <p>
+    <strong>Diagnosis:</strong>
+    <%= patient_card.diagnosis %>
+  </p>
+
+  <p>
+    <strong>Patient:</strong>
+    <%= patient_card.patient.middle_name %>
+  </p>
+
+</div>

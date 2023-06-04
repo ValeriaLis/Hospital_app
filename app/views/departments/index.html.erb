@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 style="color: #AB82FF">Departments</h1>
+
+<div class="pages_style" id="departments">
+  <%= form_with(url: departments_path, method: :get) do |form| %>
+    <%= form.text_field :query, placeholder: 'Search departments' %>
+    <%= form.submit 'Search' %>
+  <% end %>
+  <% @departments.each do |department| %>
+    <%= render department %>
+    <p>
+      <%= link_to "Show this department", department %>
+    </p>
+  <% end %>
+
+  <%= will_paginate @departments %>
+</div>
+
+<%= link_to "New department", new_department_path %>
+
+</p>
+
+<p>
+  Sort by:
+  <%= link_to 'Name (asc)', { sort_field: 'name', sort_direction: 'asc' } %>
+  <%= link_to 'Name (desc)', { sort_field: 'name', sort_direction: 'desc' } %>
+  <%= link_to 'Created at (asc)', { sort_field: 'created_at', sort_direction: 'asc' } %>
+  <%= link_to 'Created at (desc)', { sort_field: 'created_at', sort_direction: 'desc' } %>
+</p>
+<p><%= link_to 'Main page', root_path %></p>
+</body>

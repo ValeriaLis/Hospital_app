@@ -1,0 +1,24 @@
+
+<body style="background: white; color: chartreuse">
+<h1 style="color: #AB82FF; text-align: center;">Welcome to the Hospital App</h1>
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="display: flex; justify-content: center; gap: 10px;">
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= clinics_path %>">Clinics</a>
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= doctors_path %>">Doctors</a>
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= patients_path %>">Patients</a>
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= departments_path %>">Departments</a>
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= patient_cards_path %>">Patient Cards</a>
+    <a style="color: #44089e; background-color: #AB82FF; padding: 10px 20px; border-radius: 10px; text-decoration: none;" href="<%= specialties_path %>">Specialty</a>
+  </div>
+  <p></p>
+
+  <% if user_signed_in? %>
+    <div style="color: #AB82FF; text-align: center;"> Welcome <%= current_user.email %> </div>
+    <div style="text-align: center;">
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out-button", style: "background-color: #71d948; color: white; padding: 10px 20px; border: none; border-radius: 10px;" %>
+    </div>
+  <% else %>
+    <%= button_to "Sign in", new_user_session_path, class: "sign-in-button", style: "background-color: #71d948; color: white; padding: 10px 20px; border: none; border-radius: 10px;" %>
+  <% end %>
+</div>
+</body>
